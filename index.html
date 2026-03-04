@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Incident Response Dashboard</title>
+    <meta name="description" content="Interactive cybersecurity incident response dashboard with MITRE ATT&CK framework mapping and real-time analytics.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1><span>&#9632;</span> Cybersecurity Incident Response Dashboard</h1>
+        <div class="header-right">
+            <span class="status-badge">System Active</span>
+            <span class="live-clock" id="live-clock"></span>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h3>Date Range</h3>
+                <input type="date" id="filter-date-start" placeholder="Start Date">
+                <input type="date" id="filter-date-end" placeholder="End Date">
+            </div>
+
+            <div class="filter-section">
+                <h3>Severity</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" class="severity-filter" value="Critical" checked> <span class="severity-dot critical"></span> Critical</label>
+                    <label><input type="checkbox" class="severity-filter" value="High" checked> <span class="severity-dot high"></span> High</label>
+                    <label><input type="checkbox" class="severity-filter" value="Medium" checked> <span class="severity-dot medium"></span> Medium</label>
+                    <label><input type="checkbox" class="severity-filter" value="Low" checked> <span class="severity-dot low"></span> Low</label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Attack Type</h3>
+                <select id="filter-attack-type">
+                    <option value="">All Types</option>
+                </select>
+            </div>
+
+            <button class="btn-reset" id="btn-reset-filters">Reset Filters</button>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="main-content">
+            <!-- Stat Cards -->
+            <div class="stat-cards">
+                <div class="stat-card total">
+                    <div class="label">Total Incidents</div>
+                    <div class="value" id="stat-total">0</div>
+                </div>
+                <div class="stat-card critical">
+                    <div class="label">Critical</div>
+                    <div class="value" id="stat-critical">0</div>
+                </div>
+                <div class="stat-card high">
+                    <div class="label">High</div>
+                    <div class="value" id="stat-high">0</div>
+                </div>
+                <div class="stat-card medium">
+                    <div class="label">Medium</div>
+                    <div class="value" id="stat-medium">0</div>
+                </div>
+                <div class="stat-card low">
+                    <div class="label">Low</div>
+                    <div class="value" id="stat-low">0</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Incident Severity Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="severityChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Incident Timeline</h3>
+                    <div class="chart-container">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MITRE ATT&CK Heatmap -->
+            <div class="mitre-section">
+                <h3>MITRE ATT&CK Technique Heatmap</h3>
+                <div class="mitre-grid" id="mitre-grid"></div>
+            </div>
+
+            <!-- Incident Table -->
+            <div class="table-section">
+                <h3>Incident Log</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-col="timestamp" onclick="sortTable('timestamp')">Date <span class="sort-icon">&#9650;</span></th>
+                                <th data-col="title" onclick="sortTable('title')">Incident <span class="sort-icon">&#9650;</span></th>
+                                <th data-col="severity" onclick="sortTable('severity')">Severity <span class="sort-icon">&#9650;</span></th>
+                                <th data-col="status" onclick="sortTable('status')">Status <span class="sort-icon">&#9650;</span></th>
+                                <th data-col="attack_type" onclick="sortTable('attack_type')">Attack Type <span class="sort-icon">&#9650;</span></th>
+                                <th data-col="mitre_technique" onclick="sortTable('mitre_technique')">MITRE ID <span class="sort-icon">&#9650;</span></th>
+                                <th data-col="response_time_hours" onclick="sortTable('response_time_hours')">Response <span class="sort-icon">&#9650;</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="incident-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/mitre.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
