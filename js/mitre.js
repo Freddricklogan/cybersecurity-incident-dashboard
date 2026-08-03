@@ -58,9 +58,9 @@ window.renderMitreHeatmap = function(incidents) {
                 const g = Math.round(68 * intensity + 35 * (1 - intensity));
                 const b = Math.round(68 * intensity + 50 * (1 - intensity));
                 cell.style.background = `rgba(${r}, ${g}, ${b}, ${0.2 + intensity * 0.6})`;
-                cell.style.color = '#cdefd6';
+                cell.style.color = '#f4f3ef';
             } else {
-                cell.style.background = 'rgba(11, 16, 11, 0.3)';
+                cell.style.background = 'rgba(0, 19, 39, 0.3)';
             }
 
             cell.innerHTML = `
@@ -69,7 +69,7 @@ window.renderMitreHeatmap = function(incidents) {
                 <div class="mitre-tooltip">
                     <strong>${tech.id}: ${tech.name}</strong>
                     ${tech.description}<br>
-                    <span style="color: ${tech.count > 0 ? '#cf5c4e' : '#7f9585'}; font-weight: 600; margin-top: 4px; display: inline-block;">
+                    <span style="color: ${tech.count > 0 ? '#e0705f' : '#adc4e0'}; font-weight: 600; margin-top: 4px; display: inline-block;">
                         ${tech.count} incident${tech.count !== 1 ? 's' : ''}
                     </span>
                 </div>
