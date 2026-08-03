@@ -5,15 +5,15 @@
     --bg-secondary: #111827;
     --bg-card: #1a2332;
     --border: #1e293b;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --critical: #ef4444;
-    --high: #f97316;
-    --medium: #eab308;
-    --low: #22c55e;
-    --accent: #3b82f6;
-    --accent-dim: rgba(59, 130, 246, 0.15);
+    --text-primary: #eafbee;
+    --text-secondary: #8fa596;
+    --text-muted: #6f8574;
+    --critical: #cf5c4e;
+    --high: #cf8a3f;
+    --medium: #cfa03d;
+    --low: #39d16a;
+    --accent: #5f9e7a;
+    --accent-dim: rgba(95, 158, 122, 0.15);
 }
 
 body {
@@ -426,7 +426,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background: rgba(59, 130, 246, 0.05);
+    background: rgba(95, 158, 122, 0.05);
 }
 
 tbody td {
@@ -445,10 +445,10 @@ tbody td {
     letter-spacing: 0.05em;
 }
 
-.severity-badge.critical { background: rgba(239,68,68,0.15); color: var(--critical); }
-.severity-badge.high { background: rgba(249,115,22,0.15); color: var(--high); }
-.severity-badge.medium { background: rgba(234,179,8,0.15); color: var(--medium); }
-.severity-badge.low { background: rgba(34,197,94,0.15); color: var(--low); }
+.severity-badge.critical { background: rgba(207, 92, 78,0.15); color: var(--critical); }
+.severity-badge.high { background: rgba(207, 138, 63,0.15); color: var(--high); }
+.severity-badge.medium { background: rgba(207, 160, 61,0.15); color: var(--medium); }
+.severity-badge.low { background: rgba(57, 209, 106,0.15); color: var(--low); }
 
 .status-tag {
     display: inline-block;
@@ -458,10 +458,10 @@ tbody td {
     font-weight: 500;
 }
 
-.status-tag.open { background: rgba(239,68,68,0.1); color: var(--critical); }
-.status-tag.investigating { background: rgba(249,115,22,0.1); color: var(--high); }
-.status-tag.contained { background: rgba(234,179,8,0.1); color: var(--medium); }
-.status-tag.resolved { background: rgba(34,197,94,0.1); color: var(--low); }
+.status-tag.open { background: rgba(207, 92, 78,0.1); color: var(--critical); }
+.status-tag.investigating { background: rgba(207, 138, 63,0.1); color: var(--high); }
+.status-tag.contained { background: rgba(207, 160, 61,0.1); color: var(--medium); }
+.status-tag.resolved { background: rgba(57, 209, 106,0.1); color: var(--low); }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }

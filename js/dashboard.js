@@ -50,7 +50,7 @@ function renderSeverityChart() {
             labels: Object.keys(counts),
             datasets: [{
                 data: Object.values(counts),
-                backgroundColor: ['#ef4444', '#f97316', '#eab308', '#22c55e'],
+                backgroundColor: ['#cf5c4e', '#cf8a3f', '#cfa03d', '#39d16a'],
                 borderColor: '#1a2332',
                 borderWidth: 3
             }]
@@ -62,7 +62,7 @@ function renderSeverityChart() {
             plugins: {
                 legend: {
                     position: 'bottom',
-                    labels: { color: '#94a3b8', padding: 16, usePointStyle: true, pointStyleWidth: 10, font: { size: 12 } }
+                    labels: { color: '#8fa596', padding: 16, usePointStyle: true, pointStyleWidth: 10, font: { size: 12 } }
                 }
             }
         }
@@ -95,10 +95,10 @@ function renderTimelineChart() {
         data: {
             labels,
             datasets: [
-                { label: 'Critical', data: sortedKeys.map(k => monthly[k].Critical), borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)', fill: true, tension: 0.4 },
-                { label: 'High', data: sortedKeys.map(k => monthly[k].High), borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.1)', fill: true, tension: 0.4 },
-                { label: 'Medium', data: sortedKeys.map(k => monthly[k].Medium), borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.4 },
-                { label: 'Low', data: sortedKeys.map(k => monthly[k].Low), borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.4 }
+                { label: 'Critical', data: sortedKeys.map(k => monthly[k].Critical), borderColor: '#cf5c4e', backgroundColor: 'rgba(207, 92, 78,0.1)', fill: true, tension: 0.4 },
+                { label: 'High', data: sortedKeys.map(k => monthly[k].High), borderColor: '#cf8a3f', backgroundColor: 'rgba(207, 138, 63,0.1)', fill: true, tension: 0.4 },
+                { label: 'Medium', data: sortedKeys.map(k => monthly[k].Medium), borderColor: '#cfa03d', backgroundColor: 'rgba(207, 160, 61,0.1)', fill: true, tension: 0.4 },
+                { label: 'Low', data: sortedKeys.map(k => monthly[k].Low), borderColor: '#39d16a', backgroundColor: 'rgba(57, 209, 106,0.1)', fill: true, tension: 0.4 }
             ]
         },
         options: {
@@ -106,12 +106,12 @@ function renderTimelineChart() {
             maintainAspectRatio: false,
             interaction: { mode: 'index', intersect: false },
             scales: {
-                x: { grid: { color: 'rgba(30,41,59,0.5)' }, ticks: { color: '#64748b', font: { size: 11 } } },
-                y: { grid: { color: 'rgba(30,41,59,0.5)' }, ticks: { color: '#64748b', stepSize: 1, font: { size: 11 } }, beginAtZero: true }
+                x: { grid: { color: 'rgba(30,41,59,0.5)' }, ticks: { color: '#6f8574', font: { size: 11 } } },
+                y: { grid: { color: 'rgba(30,41,59,0.5)' }, ticks: { color: '#6f8574', stepSize: 1, font: { size: 11 } }, beginAtZero: true }
             },
             plugins: {
                 legend: {
-                    labels: { color: '#94a3b8', usePointStyle: true, pointStyleWidth: 10, font: { size: 11 } }
+                    labels: { color: '#8fa596', usePointStyle: true, pointStyleWidth: 10, font: { size: 11 } }
                 }
             }
         }
