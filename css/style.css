@@ -1,19 +1,19 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg-primary: #0a0e17;
-    --bg-secondary: #111827;
-    --bg-card: #1a2332;
-    --border: #1e293b;
-    --text-primary: #eafbee;
-    --text-secondary: #8fa596;
-    --text-muted: #6f8574;
+    --bg-primary: #0b0f0b;
+    --bg-secondary: #0b100b;
+    --bg-card: #0b100b;
+    --border: #0b100b;
+    --text-primary: #cdefd6;
+    --text-secondary: #7f9585;
+    --text-muted: #7f9585;
     --critical: #cf5c4e;
-    --high: #cf8a3f;
-    --medium: #cfa03d;
-    --low: #39d16a;
-    --accent: #5f9e7a;
-    --accent-dim: rgba(95, 158, 122, 0.15);
+    --high: #d9a441;
+    --medium: #d9a441;
+    --low: #2fbf5f;
+    --accent: #2fbf5f;
+    --accent-dim: rgba(47, 191, 95, 0.15);
 }
 
 body {
@@ -354,7 +354,7 @@ select:focus {
     font-size: 0.75rem;
     text-align: left;
     color: var(--text-secondary);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 12px rgba(11, 15, 11,0.4);
 }
 
 .mitre-cell:hover .mitre-tooltip {
@@ -421,12 +421,12 @@ thead th.sorted .sort-icon {
 }
 
 tbody tr {
-    border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+    border-bottom: 1px solid rgba(11, 16, 11, 0.5);
     transition: background 0.15s;
 }
 
 tbody tr:hover {
-    background: rgba(95, 158, 122, 0.05);
+    background: rgba(47, 191, 95, 0.05);
 }
 
 tbody td {
@@ -446,9 +446,9 @@ tbody td {
 }
 
 .severity-badge.critical { background: rgba(207, 92, 78,0.15); color: var(--critical); }
-.severity-badge.high { background: rgba(207, 138, 63,0.15); color: var(--high); }
-.severity-badge.medium { background: rgba(207, 160, 61,0.15); color: var(--medium); }
-.severity-badge.low { background: rgba(57, 209, 106,0.15); color: var(--low); }
+.severity-badge.high { background: rgba(217, 164, 65,0.15); color: var(--high); }
+.severity-badge.medium { background: rgba(217, 164, 65,0.15); color: var(--medium); }
+.severity-badge.low { background: rgba(47, 191, 95,0.15); color: var(--low); }
 
 .status-tag {
     display: inline-block;
@@ -459,9 +459,9 @@ tbody td {
 }
 
 .status-tag.open { background: rgba(207, 92, 78,0.1); color: var(--critical); }
-.status-tag.investigating { background: rgba(207, 138, 63,0.1); color: var(--high); }
-.status-tag.contained { background: rgba(207, 160, 61,0.1); color: var(--medium); }
-.status-tag.resolved { background: rgba(57, 209, 106,0.1); color: var(--low); }
+.status-tag.investigating { background: rgba(217, 164, 65,0.1); color: var(--high); }
+.status-tag.contained { background: rgba(217, 164, 65,0.1); color: var(--medium); }
+.status-tag.resolved { background: rgba(47, 191, 95,0.1); color: var(--low); }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
