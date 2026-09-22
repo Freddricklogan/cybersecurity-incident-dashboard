@@ -1,12 +1,12 @@
 /** Wires incidents, filters, the ATT&CK heatmap, STIX interchange and the Executive Shell. */
 import { heatmap, navigatorLayer } from './attack.js';
 import { loadChartLib, makeCharts } from './charts.js';
-import { mountExecShell } from './exec-shell.js';
+import { mountExecShell, tokens } from './exec-shell.js';
 import { filterIncidents, loadIncidents, SEVERITIES, sortIncidents, stats, STATUSES } from './incidents.js';
 import { fromStixBundle, toStixBundle } from './stix.js';
 import { $, dateLabel, el, hoursLabel, setText } from './ui.js';
 
-const SEV_COLOUR = { Critical: '#f85149', High: '#d29922', Medium: '#58A6FF', Low: '#3fb950' };
+const SEV_COLOUR = { Critical: tokens().danger, High: tokens().warn, Medium: tokens().accent, Low: tokens().ok };
 const state = { all: [], mapping: null, filtered: [], stats: null, sort: { col: 'time', dir: -1 }, source: 'data/incidents.json' };
 let charts = makeCharts(null);
 let shell;
@@ -149,6 +149,7 @@ async function boot() {
   render();
 
   shell = mountExecShell({
+  theme: 'graphite',
     title: 'Cybersecurity Incident Dashboard',
     tagline: 'A year of incident records with severity, status and response time, mapped to MITRE ATT&CK techniques: filterable, sortable, exportable as an ATT&CK Navigator layer or a STIX 2.1 bundle, and importable from STIX. Synthetic data; no live monitoring.',
     repo: 'https://github.com/Freddricklogan/cybersecurity-incident-dashboard',
