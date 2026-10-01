@@ -57,7 +57,7 @@ flowchart LR
     INC[("data/incidents.json<br/>53 synthetic records")]:::data
     MAP[("data/mitre-mapping.json<br/>35 techniques · 12 tactics")]:::data
     STIXIN[("imported STIX 2.1 bundle<br/>parsed locally")]:::data
-    subgraph PURE["Pure modules (14 tests, 100% stmts)"]
+    subgraph PURE["Pure modules (22 tests, 100% stmts)"]
       I["incidents.js<br/>validate · filter · sort · stats"]:::service
       A["attack.js<br/>heatmap · Navigator layer"]:::service
       S["stix.js<br/>bundle export · import"]:::service
